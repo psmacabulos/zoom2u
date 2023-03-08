@@ -1,5 +1,7 @@
 import React from 'react';
-import { AppBar, Typography } from '@mui/material';
+import { AppBar, Typography } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+
 import VideoPlayer from './components/VideoPlayer';
 import Options from './components/Options';
 import Notifications from './components/Notifications';
@@ -28,9 +30,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const App = () => {
+  const classes = useStyles();
   return (
-    <div>
-      <AppBar position='static' color='inherit'>
+    <div className={classes.wrapper}>
+      <AppBar className={classes.appBar} position='static' color='inherit'>
         <Typography variant='h2' align='center'>
           Video Chat
         </Typography>
